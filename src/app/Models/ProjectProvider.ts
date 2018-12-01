@@ -9,8 +9,10 @@ import { Injectable } from '@angular/core';
  * Список проектов.
  */
 export class ProjectProvider {
+    private readonly projectList: Project[];
+
     constructor() {
-        this.projects = [
+        this.projectList = [
             new Project(
                 'electap',
                 'ElecTap',
@@ -21,9 +23,9 @@ export class ProjectProvider {
                 HashTags.excaliburEngine,
                 HashTags.angular),
             new Project(
-                'electap',
-                'ElecTap',
-                'прототип клик-игры',
+                'colormix',
+                'Colormix',
+                'проект пустышка для тестирования сайта',
                 'https://github.com/BooTheHamster/electap',
                 HashTags.typescript,
                 HashTags.canvas,
@@ -31,5 +33,17 @@ export class ProjectProvider {
                 HashTags.angular)
             ];
     }
-    public readonly projects: Project[];
+
+    public get projects(): Project[] {
+        return Object.assign([], this.projectList);
+    }
+
+    public projectByIdentificator(projectIdentificator: string): Project {
+        const result = this.projects.find((project: Project) => {
+            return project.identificator === projectIdentificator;
+        });
+
+        return result;
+    }
+
 }

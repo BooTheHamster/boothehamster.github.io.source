@@ -19,20 +19,44 @@ body {
     text-align: left
 }
 
-.container-description {
-    width: 50%;
-    display: block;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    margin-top: 20px;
+.hashtag, .project-source-code-link {
+    font-size: 10pt;
+    display: inline;
+    margin: 2px 2px 0px 2px;
 }
 
-.container-projects {
-    width: 50%;
-    display: block;
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    margin-bottom: 20px;
+.project {
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+.project-title {
+    @media screen and (min-width: 601px) {
+        font-size: 16pt;
+    }
+
+    @media screen and (max-width: 600px) {
+        font-size: 14pt;
+    }
+    
+    display: inline;
+}
+
+.project-text {
+    @media screen and (min-width: 601px) {
+        font-size: 14pt;
+    }
+
+    @media screen and (max-width: 600px) {
+        font-size: 12pt;
+    }
+    
+    display: inline;
+}
+
+.center-block {
+    width: auto;
+    height: auto;
+    margin: 10px;
+    padding: 0px;
 }
