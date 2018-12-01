@@ -1,9 +1,11 @@
+import { ProjectProvider } from './Models/ProjectProvider';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { PersonalInfoComponent } from './personal-info/personal-info.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { PersonProvider } from './Models/PersonProvider';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,10 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    ProjectProvider,
+    PersonProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
