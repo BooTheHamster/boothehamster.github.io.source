@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 const distPath = path.resolve(__dirname, 'dist');
@@ -13,7 +12,7 @@ module.exports = {
     entry: {
         polyfills: './src/polyfills.ts',
         app: './src/main.ts',
-        styles: './src/styles.less'
+        styles: './src/styles.less',
     },
     module: {
         rules: [
@@ -58,7 +57,6 @@ module.exports = {
         path: distPath,
     },
     plugins: [
-        new CleanWebpackPlugin([distPath]),
         new HtmlWebpackPlugin(),
         new ExtractTextPlugin('styles.css'),
     ],
@@ -77,5 +75,9 @@ module.exports = {
                 extractComments: true,
             }),
         ],
+    },
+    devServer: {
+        contentBase: distPath,
+        port: 4200,
     },
 };
