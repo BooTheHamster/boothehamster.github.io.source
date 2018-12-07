@@ -9,7 +9,7 @@
     "e2e": "ng e2e",
     "build": "webpack --no-color --config webpack.config.js",
     "wpserve": "webpack-dev-server",
-    "wpstop": "node --inspect-brk kill-dev-server.js"
+    "wpstop": "node kill-dev-server.js"
   },
   "prettier": {
     "trailingComma": "es5",

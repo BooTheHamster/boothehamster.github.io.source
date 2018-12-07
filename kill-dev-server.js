@@ -1,34 +1,54 @@
-const ps = require('ps-node');
+const psNode = require('ps-node');
 
-const getProcesses = async () => {
-    let result = [];
+function getProcesses(processFilter) {
+    return new Promise(resolve => {
+        psNode.lookup({}, (error, allProcesses) => {
+            var filteredProcesses = [];
 
-    await ps.lookup({}, (error, resultList) => {
-        if (error) {
-            throw new Error(error);
-        }
+            allProcesses.forEach(process => {
+                if (
+                    !process ||
+                    typeof process.command === 'undefined' ||
+                    !process.command
+                ) {
+                    return;
+                }
 
-        resultList.forEach(process => {
-            if (!process) {
-                return;
-            }
+                let command = process.command;
 
-            let command = process.command;
+                if (process.arguments) {
+                    process.arguments.forEach(
+                        arg => (command += ` ${arg.toString()}`)
+                    );
+                }
 
-            if (process.arguments) {
-                process.arguments.forEach(
-                    arg => (command += ` ${arg.toString()}`)
-                );
-            }
+                const processInfo = { pid: process.pid, command: command };
 
-            result.push({ pid: process.pid, name: command });
+                if (processFilter(processInfo) === false) {
+                    return;
+                }
 
-            return result;
+                filteredProcesses.push(processInfo);
+            });
+
+            resolve({ processes: filteredProcesses, error: error });
         });
     });
+}
 
-    return result;
+findAndKillProcesses = async () => {
+    const result = await getProcesses(process => {
+        return process.command.includes('ng serve') || process.command.includes('webpack-dev-server');
+    });
+
+    if (result.error) {
+        throw new Error(error);
+    }
+
+    result.processes.forEach(process => {
+        console.log(`Kill: ${process.pid} ${process.command}`)
+        psNode.kill(process.pid);
+    })   
 };
 
-var r = getProcesses();
-var t = 1;
+findAndKillProcesses();
