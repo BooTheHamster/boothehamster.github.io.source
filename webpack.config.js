@@ -4,11 +4,31 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 const distPath = path.resolve(__dirname, 'dist');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const tsconfigPath = path.resolve(__dirname, 'tsconfig.json');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const devMode = process.env.NODE_ENV !== 'production';
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
+plugins = [new HtmlWebpackPlugin(), new MiniCssExtractPlugin({})];
+
+if (devMode) {
+    plugins.concat([
+        new CleanWebpackPlugin(distPath),
+        new webpack.LoaderOptionsPlugin({
+            debug: true,
+        }),
+    ]);
+} else {
+    plugins.concat([new OptimizeCSSAssetsPlugin()]);
+}
+
+mode = devMode ? 'development' : 'production',
+
+console.log(`Build ${mode}`)
 
 module.exports = {
-    mode: 'development',
+    mode: mode,
     entry: {
         polyfills: './src/polyfills.ts',
         app: './src/main.ts',
@@ -40,26 +60,20 @@ module.exports = {
             },
             {
                 test: /\.less$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: ['css-loader', 'less-loader'],
-                }),
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
                 exclude: [/node_modules/, nodeModulesPath],
             },
         ],
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js', '.less'],
+        extensions: ['.ts', '.js'],
     },
     output: {
         publicPath: '/',
-        filename: '[name].[hash].js',
+        filename: '[name].js',
         path: distPath,
     },
-    plugins: [
-        new HtmlWebpackPlugin(),
-        new ExtractTextPlugin('styles.css'),
-    ],
+    plugins: plugins,
     optimization: {
         splitChunks: {
             cacheGroups: {
