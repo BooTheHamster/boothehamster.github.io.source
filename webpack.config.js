@@ -9,30 +9,32 @@ const tsconfigPath = path.resolve(__dirname, 'tsconfig.json');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const srcPath = path.resolve(__dirname, 'src');
 
-plugins = [new HtmlWebpackPlugin(), new MiniCssExtractPlugin({})];
+plugins = [
+    new HtmlWebpackPlugin({
+        template: './src/index.html'
+    }),
+    new MiniCssExtractPlugin({}),
+];
 
-if (devMode) {
-    plugins.concat([
-        new CleanWebpackPlugin(distPath),
-        new webpack.LoaderOptionsPlugin({
-            debug: true,
-        }),
-    ]);
-} else {
-    plugins.concat([new OptimizeCSSAssetsPlugin()]);
-}
+plugins = devMode
+    ? plugins.concat([
+          new CleanWebpackPlugin(distPath),
+          new webpack.LoaderOptionsPlugin({
+              debug: true,
+          }),
+      ])
+    : plugins.concat([new OptimizeCSSAssetsPlugin()]);
 
-mode = devMode ? 'development' : 'production',
-
-console.log(`Build ${mode}`)
+mode = devMode ? 'development' : 'production';
+console.log(`Build ${mode}`);
 
 module.exports = {
     mode: mode,
     entry: {
         polyfills: './src/polyfills.ts',
-        app: './src/main.ts',
-        styles: './src/styles.less',
+        app: './src/main.ts'
     },
     module: {
         rules: [
@@ -51,18 +53,14 @@ module.exports = {
                 exclude: [/\.(spec|e2e)\.ts$/, /node_modules/, nodeModulesPath],
             },
             {
-                test: /\.html$/,
-                use: [
-                    {
-                        loader: 'html-loader',
-                    },
-                ],
-            },
-            {
                 test: /\.less$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
                 exclude: [/node_modules/, nodeModulesPath],
             },
+            {
+                test: /\.html$/,
+                use: ['html-loader'],
+            }
         ],
     },
     resolve: {
