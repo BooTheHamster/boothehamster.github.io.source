@@ -14,8 +14,8 @@ export class PersonProvider {
         this.person = new Person(
             'Олег Севостьянов',
             ['C#', 'Delphi'],
-            ['HTML', 'CSS', 'TypeScript', 'Angular', 'python', 'powershell'],
-            ['F#'],
+            ['HTML', 'CSS', 'TypeScript', 'Angular', 'powershell'],
+            ['python'],
             new Date('1978-06-01')
         );
     }

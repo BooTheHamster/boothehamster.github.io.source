@@ -22,15 +22,15 @@ export class ProjectProvider {
                 HashTags.canvas,
                 HashTags.excaliburEngine,
                 HashTags.angular),
-            new Project(
-                'colormix',
-                'Colormix',
-                'проект пустышка для тестирования сайта',
-                'https://github.com/BooTheHamster/electap',
-                HashTags.typescript,
-                HashTags.canvas,
-                HashTags.excaliburEngine,
-                HashTags.angular)
+            // new Project(
+            //     'colormix',
+            //     'Colormix',
+            //     'проект пустышка для тестирования сайта',
+            //     'https://github.com/BooTheHamster/electap',
+            //     HashTags.typescript,
+            //     HashTags.canvas,
+            //     HashTags.excaliburEngine,
+            //     HashTags.angular)
             ];
     }
 
