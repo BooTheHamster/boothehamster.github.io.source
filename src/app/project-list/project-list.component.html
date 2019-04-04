@@ -1,5 +1,5 @@
 <div *ngFor="let project of projects" class="project">
-  <div class="project-title text-align-left"><a routerLink="{{project.identificator}}">{{project.name}}</a></div>
+  <div class="project-title text-align-left"><a *ngIf="project.hasDemoUrl" href="{{project.demoUrl}}">{{project.name}}</a></div>
     <div class="project-text text-align-left"> - {{project.description}}</div>
     <div>
       <div *ngFor="let hashtag of project.hashTags" class="hashtag text-align-left">{{hashtag.text}}</div>

@@ -9,12 +9,10 @@ import { AppComponent } from './app.component';
 import { PersonProvider } from './Models/PersonProvider';
 import { ElectapComponent } from './electap/electap.component';
 import { ProjectLinkComponent } from './project-link/project-link.component';
-import { ColormixComponent } from './colormix/colormix.component';
 
 const appRoutes: Routes = [
     { path: '', component: ProjectListComponent },
     { path: 'electap', component: ElectapComponent },
-    { path: 'colormix', component: ColormixComponent },
     { path: '**', component: AppComponent },
 ];
 
@@ -24,8 +22,7 @@ const appRoutes: Routes = [
         PersonalInfoComponent,
         ProjectListComponent,
         ElectapComponent,
-        ProjectLinkComponent,
-        ColormixComponent,
+        ProjectLinkComponent
     ],
     imports: [
         BrowserModule,

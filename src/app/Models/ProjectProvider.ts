@@ -18,21 +18,13 @@ export class ProjectProvider {
                 'ElecTap',
                 'прототип клик-игры',
                 'https://github.com/BooTheHamster/electap',
+                'http://5.188.232.174/electap',
                 HashTags.typescript,
                 HashTags.canvas,
                 HashTags.excaliburEngine,
-                HashTags.angular),
-            // new Project(
-            //     'colormix',
-            //     'Colormix',
-            //     'проект пустышка для тестирования сайта',
-            //     'https://github.com/BooTheHamster/electap',
-            //     HashTags.typescript,
-            //     HashTags.canvas,
-            //     HashTags.excaliburEngine,
-            //     HashTags.angular)
+                HashTags.angular)
             ];
-    }
+    }.ю
 
     public get projects(): Project[] {
         return Object.assign([], this.projectList);
