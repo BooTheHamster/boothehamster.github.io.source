@@ -24,7 +24,7 @@ export class ProjectProvider {
                 HashTags.excaliburEngine,
                 HashTags.angular)
             ];
-    }.ю
+    }
 
     public get projects(): Project[] {
         return Object.assign([], this.projectList);
