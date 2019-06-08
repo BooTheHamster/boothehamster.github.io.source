@@ -20,4 +20,7 @@ export class HashTags {
     static canvas: HashTag = new HashTag('canvas');
     static excaliburEngine: HashTag = new HashTag('excalibur-engine');
     static angular: HashTag = new HashTag('angular');
+    static react: HashTag = new HashTag('react');
+    static netcore: HashTag = new HashTag('net core');
+    static postgresql: HashTag = new HashTag('postgresql');
 }

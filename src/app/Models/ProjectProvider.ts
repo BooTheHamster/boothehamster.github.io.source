@@ -22,7 +22,17 @@ export class ProjectProvider {
                 HashTags.typescript,
                 HashTags.canvas,
                 HashTags.excaliburEngine,
-                HashTags.angular)
+                HashTags.angular),
+            new Project(
+                'tempgraph',
+                'TempGraph',
+                'отображение температуры в виде графиков',
+                'https://github.com/BooTheHamster/tempgraph',
+                'https://github.com/BooTheHamster/tempgraph',
+                HashTags.typescript,
+                HashTags.netcore,
+                HashTags.postgresql,
+                HashTags.react)
             ];
     }
 
