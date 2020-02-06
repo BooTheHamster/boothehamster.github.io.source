@@ -18,7 +18,7 @@ export class ProjectProvider {
                 'ElecTap',
                 'прототип клик-игры',
                 'https://github.com/BooTheHamster/electap',
-                'http://5.188.232.174/electap',
+                'https://github.com/BooTheHamster/electap',
                 HashTags.typescript,
                 HashTags.canvas,
                 HashTags.excaliburEngine,
@@ -32,8 +32,24 @@ export class ProjectProvider {
                 HashTags.typescript,
                 HashTags.netcore,
                 HashTags.postgresql,
-                HashTags.react)
-            ];
+                HashTags.react),
+            new Project(
+                'scripts',
+                'JustScripts',
+                'резервные копии скриптов на python, powershell ...',
+                'https://github.com/BooTheHamster/scripts',
+                'https://github.com/BooTheHamster/scripts',
+                HashTags.python,
+                HashTags.powershell),
+            new Project(
+                'sdl2-test',
+                'SDL2 Test',
+                'приложение для изучения библиотеки SDL2',
+                'https://github.com/BooTheHamster/sdl2-test',
+                'https://github.com/BooTheHamster/sdl2-test',
+                HashTags.netcore,
+                HashTags.sdl2)
+        ];
     }
 
     public get projects(): Project[] {

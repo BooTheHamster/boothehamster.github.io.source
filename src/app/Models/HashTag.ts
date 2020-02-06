@@ -23,4 +23,7 @@ export class HashTags {
     static react: HashTag = new HashTag('react');
     static netcore: HashTag = new HashTag('net core');
     static postgresql: HashTag = new HashTag('postgresql');
+    static python: HashTag = new HashTag('python');
+    static powershell: HashTag = new HashTag('powershell');
+    static sdl2: HashTag = new HashTag('sdl2');
 }
