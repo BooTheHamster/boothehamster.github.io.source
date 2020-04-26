@@ -1,42 +1,42 @@
 {
-    "name": "personal-page",
-    "version": "0.0.0",
-    "scripts": {
-        "ng": "ng",
-        "start": "ng serve",
-        "test": "ng test",
-        "lint": "ng lint",
-        "e2e": "ng e2e",
-        "build": "ng build",
-        "buildprod": "ng build --prod --aot=true --buildOptimizer=true --extractCss=true --optimization=true --outputHashing=none --output-path=./dist",
-        "kill": "node kill-dev-server.js"
-    },
-    "prettier": {
-        "trailingComma": "es5",
-        "tabWidth": 4,
-        "semi": true,
-        "singleQuote": true
-    },
-    "private": true,
-    "dependencies": {
-        "@angular/animations": "^7.1.2",
-        "@angular/common": "^7.1.2",
-        "@angular/core": "^7.1.2",
-        "@angular/forms": "^7.1.2",
-        "@angular/http": "^7.1.2",
-        "@angular/platform-browser": "^7.1.2",
-        "@angular/platform-browser-dynamic": "^7.1.2",
-        "@angular/router": "^7.1.2",
-        "core-js": "^2.6.0",
-        "rxjs": "~6.3.3",
-        "zone.js": "~0.8.26"
-    },
-    "devDependencies": {
-        "@angular-devkit/build-angular": "^0.11.2",
-        "@angular/cli": "^7.1.2",
-        "@angular/compiler": "^7.1.2",
-        "@angular/compiler-cli": "^7.1.2",
-        "eslint": "^6.8.0",
-        "ps-node": "^0.1.6"
-    }
+  "name": "personal-page",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "build": "ng build",
+    "buildprod": "ng build --prod --aot=true --buildOptimizer=true --extractCss=true --optimization=true --outputHashing=none --output-path=./dist",
+    "kill": "node kill-dev-server.js"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": true,
+    "singleQuote": true
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^7.1.2",
+    "@angular/common": "^7.1.2",
+    "@angular/core": "^7.1.2",
+    "@angular/forms": "^7.1.2",
+    "@angular/platform-browser": "^7.1.2",
+    "@angular/platform-browser-dynamic": "^7.1.2",
+    "@angular/router": "^7.1.2",
+    "core-js": "^2.6.0",
+    "rxjs": "~6.3.3",
+    "zone.js": "~0.9.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.803.25",
+    "@angular/cli": "^8.3.26",
+    "@angular/compiler": "^7.1.2",
+    "@angular/compiler-cli": "^7.1.2",
+    "codelyzer": "^5.0.1",
+    "eslint": "^6.8.0",
+    "ps-node": "^0.1.6"
+  }
 }
