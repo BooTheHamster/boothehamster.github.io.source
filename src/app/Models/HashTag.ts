@@ -26,4 +26,5 @@ export class HashTags {
     static python: HashTag = new HashTag('python');
     static powershell: HashTag = new HashTag('powershell');
     static sdl2: HashTag = new HashTag('sdl2');
+    static telegram: HashTag = new HashTag('telegram');
 }

@@ -14,6 +14,14 @@ export class ProjectProvider {
     constructor() {
         this.projectList = [
             new Project(
+                'iznakurnoz.Bot',
+                'iznakurnoz.Bot',
+                'Бот telegram для домашнего сервера на .Net Core.',
+                'https://github.com/BooTheHamster/iznakurnoz.Bot',
+                'https://github.com/BooTheHamster/iznakurnoz.Bot',
+                HashTags.netcore,
+                HashTags.telegram),
+            new Project(
                 'electap',
                 'ElecTap',
                 'прототип клик-игры',
