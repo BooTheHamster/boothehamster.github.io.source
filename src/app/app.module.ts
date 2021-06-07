@@ -1,4 +1,4 @@
-import { ProjectProvider } from './Models/ProjectProvider';
+import { ProjectProvider } from './Services/project-provider';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { PersonalInfoComponent } from './personal-info/personal-info.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { PersonProvider } from './Models/PersonProvider';
+import { PersonProvider } from './Services/person-provider';
 import { ElectapComponent } from './electap/electap.component';
 import { ProjectLinkComponent } from './project-link/project-link.component';
 

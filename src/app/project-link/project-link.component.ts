@@ -1,6 +1,6 @@
-import { ProjectProvider } from './../Models/ProjectProvider';
+import { ProjectProvider } from '../Services/project-provider';
 import { Component, Input, OnInit } from '@angular/core';
-import { Project } from '../Models/Project';
+import { Project } from '../Models/project';
 
 @Component({
     selector: 'app-project-link',

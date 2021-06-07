@@ -1,5 +1,5 @@
-import { HashTags } from './HashTag';
-import { Project } from './Project';
+import { HashTags } from '../Models/hash-tag';
+import { Project } from '../Models/project';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -16,7 +16,7 @@ export class ProjectProvider {
             new Project(
                 'iznakurnoz.Bot',
                 'iznakurnoz.Bot',
-                'Бот telegram для домашнего сервера на .Net Core.',
+                'бот telegram для домашнего сервера на .Net Core.',
                 'https://github.com/BooTheHamster/iznakurnoz.Bot',
                 'https://github.com/BooTheHamster/iznakurnoz.Bot',
                 HashTags.netcore,
@@ -32,19 +32,9 @@ export class ProjectProvider {
                 HashTags.excaliburEngine,
                 HashTags.angular),
             new Project(
-                'tempgraph',
-                'TempGraph',
-                'отображение температуры в виде графиков',
-                'https://github.com/BooTheHamster/tempgraph',
-                'https://github.com/BooTheHamster/tempgraph',
-                HashTags.typescript,
-                HashTags.netcore,
-                HashTags.postgresql,
-                HashTags.react),
-            new Project(
                 'scripts',
                 'JustScripts',
-                'резервные копии скриптов на python, powershell ...',
+                'резервные копии скриптов на python, powershell',
                 'https://github.com/BooTheHamster/scripts',
                 'https://github.com/BooTheHamster/scripts',
                 HashTags.python,

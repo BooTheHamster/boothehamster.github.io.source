@@ -1,22 +1,33 @@
 .personal-info-container {
-    @media screen and (min-width: 601px) {    
-        margin-right: 7%;
-    }
+    display: flex;
+    flex-direction: column;
+}
 
-    @media screen and (max-width: 600px) {
-        margin-right: 2%;
-    }
+.text-end {
+    text-align: end;
 }
 
 .username {
-    font-size: 26pt;
-    margin-bottom: 10px;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
 }
+
+@fontsize: 1.5rem;
+@fontsize-small: @fontsize * 0.7;
+@fontsize-small-small: @fontsize * 0.6;
 
 .description {
-    font-size: 18pt;
+    margin-bottom: 0.3rem;
 }
 
-.description-small {
-    font-size: 12pt;
+.skill-text {
+    font-size: @fontsize;
+}
+
+.skill-text-sm {
+    font-size: @fontsize-small;
+}
+
+.skill-text-sm-sm {
+    font-size: @fontsize-small-small;
 }

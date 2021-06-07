@@ -1,4 +1,4 @@
-import { HashTag } from './HashTag';
+import { HashTag } from './hash-tag';
 
 /**
  * Описание проекта.

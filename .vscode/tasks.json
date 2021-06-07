@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "ng serve",
+			"type": "shell",
+			"command": "ng",
+			"args": [
+				"serve"
+			],
+			"problemMatcher": []
+		}
+	]
+}

@@ -1,0 +1,46 @@
+.tags {
+    font-size     : 1rem;
+    display       : flex;
+    flex-direction: row;
+}
+
+.tags div {
+    margin-left: 0.2rem;
+}
+
+.tags a {
+    margin-left: 0.5rem;
+}
+
+.project {
+    margin-left  : 2%;
+    margin-bottom: 2%;
+}
+
+.title {
+    display       : flex;
+    flex-direction: row;
+    font-size     : 1.3rem;
+    align-items   : flex-start;
+}
+
+.project-title {
+    min-width: fit-content;
+}
+
+@base-color: #454138;
+@color     : lighten(@base-color, 25);
+
+.title a {
+    background-color: @color;
+    color           : #dcd8c0;
+    padding         : 0.2rem;
+}
+
+.title span {
+    padding-left: 0.2rem;
+}
+
+.project-title {
+    padding: 0;
+}

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { PersonProvider } from '../Models/PersonProvider';
-import { Person } from '../Models/Person';
+import { PersonProvider } from '../Services/person-provider';
+import { Person } from '../Models/person';
 
 @Component({
     selector: 'app-personal-info',
